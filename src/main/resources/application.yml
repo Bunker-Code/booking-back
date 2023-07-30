@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    username: plbwhvut
+    password: xD8-y_n6AAHVQ_ClrWiGMB581_EblLgN
+    url: jdbc:postgresql://trumpet.db.elephantsql.com:5432/plbwhvut
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
