@@ -25,9 +25,9 @@ public class BookingApiService {
         return ResponseEntity.ok(bookingService.save(booking));
     }
 
-    @PutMapping("/{id}")
-    ResponseEntity<BookingDto> update(@PathVariable Long id, @RequestBody BookingDto booking) {
-        return ResponseEntity.ok(bookingService.update(id, booking));
+    @PutMapping
+    ResponseEntity<BookingDto> update(@RequestBody BookingDto booking) {
+        return ResponseEntity.ok(bookingService.update(booking));
     }
 
     @DeleteMapping("/{id}")

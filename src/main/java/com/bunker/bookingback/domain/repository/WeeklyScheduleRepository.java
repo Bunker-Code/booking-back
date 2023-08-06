@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface WeeklyRepository extends JpaRepository<WeeklySchedule, Long> , JpaSpecificationExecutor<WeeklySchedule> {
+public interface WeeklyScheduleRepository extends JpaRepository<WeeklySchedule, Long> , JpaSpecificationExecutor<WeeklySchedule> {
 }

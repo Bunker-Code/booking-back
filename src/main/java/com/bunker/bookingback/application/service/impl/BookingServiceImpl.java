@@ -27,19 +27,16 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public BookingDto save(BookingDto booking) {
-        Booking bookingToSave = this.bookingMapper.dtoToModel(booking);
+        final Booking bookingToSave = this.bookingMapper.dtoToModel(booking);
         return this.bookingMapper.modelToDto(this.bookingRepository.save(bookingToSave));
     }
 
     @Override
-    public BookingDto update(Long id, BookingDto booking) {
-        if(!booking.getId().equals(id)) {
-            throw new RuntimeException();
-        }
-        if(!this.bookingRepository.existsById(id)) {
+    public BookingDto update(BookingDto booking) {
+        if(booking.getId() == null || !this.bookingRepository.existsById(booking.getId())) {
             throw new RuntimeException("booking dont Exist");
         }
-        Booking bookingToUpdate = this.bookingMapper.dtoToModel(booking);
+        final Booking bookingToUpdate = this.bookingMapper.dtoToModel(booking);
 
         return this.bookingMapper.modelToDto(this.bookingRepository.save(bookingToUpdate));
     }

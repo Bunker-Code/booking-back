@@ -9,10 +9,9 @@ import java.util.List;
 public interface BookingService {
 
     BookingDto findById(Long id);
-    BookingDto save(BookingDto booking);
-    BookingDto update(Long id, BookingDto booking);
-
     List<BookingDto> findAll(BookingSearchDto searchDto);
+    BookingDto save(BookingDto booking);
+    BookingDto update(BookingDto booking);
     void delete(Long id);
 
 }

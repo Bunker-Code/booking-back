@@ -1,13 +1,12 @@
 package com.bunker.bookingback.application.service;
 
-import com.bunker.bookingback.application.dto.BookingDto;
-import com.bunker.bookingback.domain.model.Schedule;
+import com.bunker.bookingback.application.dto.ScheduleDto;
 
 import java.util.List;
 
 public interface ScheduleService {
 
-    Schedule save(BookingDto booking);
+    ScheduleDto save(ScheduleDto schedule);
     void delete(Long id);
-    List<Schedule> findAll();
+    List<ScheduleDto> findAll();
 }
