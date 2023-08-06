@@ -1,8 +1,8 @@
 spring:
   datasource:
-    username: plbwhvut
-    password: xD8-y_n6AAHVQ_ClrWiGMB581_EblLgN
-    url: jdbc:postgresql://trumpet.db.elephantsql.com:5432/plbwhvut
+    username: postgres
+    password: 04MrZiJUfNnlzV8uKWe9
+    url: jdbc:postgresql://containers-us-west-199.railway.app:6611/railway
 
   jpa:
     hibernate:

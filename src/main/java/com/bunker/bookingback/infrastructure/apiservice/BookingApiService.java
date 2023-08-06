@@ -16,6 +16,7 @@ public class BookingApiService {
 
     @GetMapping("/{id}")
     ResponseEntity<BookingDto> findById(@PathVariable Long id) {
+
         return ResponseEntity.ok(bookingService.findById(id));
     }
 
