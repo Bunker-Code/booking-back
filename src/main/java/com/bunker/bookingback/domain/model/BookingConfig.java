@@ -16,7 +16,10 @@ public class BookingConfig {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "game_id")
+    private Long gameId;
+
     @ManyToOne
-    @JoinColumn(name = "current_weekly_schedule_id")
-    private WeeklySchedule currentWeeklySchedule;
+    @JoinColumn(name = "weekly_schedule_id")
+    private WeeklySchedule weeklySchedule;
 }
