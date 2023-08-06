@@ -22,7 +22,7 @@ public class ScheduleDto extends JsonDto {
 
     private String name;
 
-    @Schema(format = "HH:mm", example = "[00:00, 10:00, 12:00]")
+    @Schema(format = "HH:mm")
     @JsonFormat(pattern = "HH:mm")
     private Set<LocalTime> hours;
 }

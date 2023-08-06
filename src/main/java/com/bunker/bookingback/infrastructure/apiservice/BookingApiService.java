@@ -16,18 +16,17 @@ public class BookingApiService {
 
     @GetMapping("/{id}")
     ResponseEntity<BookingDto> findById(@PathVariable Long id) {
-
-        return ResponseEntity.ok(bookingService.findById(id));
+        return ResponseEntity.ok(this.bookingService.findById(id));
     }
 
     @PostMapping
     ResponseEntity<BookingDto> create(@RequestBody BookingDto booking) {
-        return ResponseEntity.ok(bookingService.save(booking));
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.bookingService.save(booking));
     }
 
     @PutMapping
     ResponseEntity<BookingDto> update(@RequestBody BookingDto booking) {
-        return ResponseEntity.ok(bookingService.update(booking));
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.bookingService.update(booking));
     }
 
     @DeleteMapping("/{id}")
