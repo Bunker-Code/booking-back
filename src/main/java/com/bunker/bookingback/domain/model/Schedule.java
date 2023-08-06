@@ -19,7 +19,7 @@ public class Schedule {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    String name;
+    private String name;
 
     @ElementCollection
     @Column(name = "hour", nullable = false)
