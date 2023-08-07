@@ -5,6 +5,6 @@ import com.bunker.bookingback.domain.model.WeeklySchedule;
 import com.bunker.bunkerframework.mapper.ModelMapper;
 import org.mapstruct.Mapper;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = { ScheduleMapper.class })
 public interface WeeklyScheduleMapper extends ModelMapper<WeeklySchedule, WeeklyScheduleDto> {
 }

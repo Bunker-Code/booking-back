@@ -22,7 +22,9 @@ public class BookingDto extends JsonDto {
 
     @Schema(format = "HH:mm", example = "00:00")
     @JsonFormat(pattern = "HH:mm")
-    private LocalTime time;
+    private LocalTime hour;
+
+    private Long gameId;
 
     private Integer numPlayers;
 
@@ -37,4 +39,6 @@ public class BookingDto extends JsonDto {
 
     @Schema(type = "string")
     private String comment;
+
+    private Boolean avaible;
 }
