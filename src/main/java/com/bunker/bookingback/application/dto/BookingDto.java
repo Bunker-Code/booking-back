@@ -1,6 +1,6 @@
 package com.bunker.bookingback.application.dto;
 
-import com.bunker.bunkerframework.dto.JsonDto;
+import com.bunker.bookingback.application.common.JsonDto;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;

@@ -2,7 +2,7 @@ package com.bunker.bookingback.application.mapper;
 
 import com.bunker.bookingback.application.dto.WeeklyScheduleDto;
 import com.bunker.bookingback.domain.model.WeeklySchedule;
-import com.bunker.bunkerframework.mapper.ModelMapper;
+import com.bunker.bookingback.application.common.ModelMapper;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring", uses = { ScheduleMapper.class })

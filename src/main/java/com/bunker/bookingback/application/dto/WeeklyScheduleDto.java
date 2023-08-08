@@ -1,6 +1,6 @@
 package com.bunker.bookingback.application.dto;
 
-import com.bunker.bunkerframework.dto.JsonDto;
+import com.bunker.bookingback.application.common.JsonDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
