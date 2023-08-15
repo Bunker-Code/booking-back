@@ -1,6 +1,7 @@
 package com.bunker.bookingback.infrastructure.apiservice;
 
 import com.bunker.bookingback.application.dto.ScheduleDto;
+import com.bunker.bookingback.application.dto.SchedulePagedDto;
 import com.bunker.bookingback.application.service.ScheduleService;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -11,7 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/schedule")
@@ -21,12 +21,12 @@ public class ScheduleApiService {
     private final ScheduleService scheduleService;
 
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Success", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ScheduleDto.class, type = "array"))),
+            @ApiResponse(responseCode = "200", description = "Success", content = @Content(mediaType = "application/json", schema = @Schema(implementation = SchedulePagedDto.class))),
             @ApiResponse(responseCode = "400", description = "Bad Request"),
             @ApiResponse(responseCode = "404", description = "Not found"),
     })
     @GetMapping
-    ResponseEntity<List<ScheduleDto>> findAll() {
+    ResponseEntity<SchedulePagedDto> findAll() {
         return ResponseEntity.ok(this.scheduleService.findAll());
     }
 

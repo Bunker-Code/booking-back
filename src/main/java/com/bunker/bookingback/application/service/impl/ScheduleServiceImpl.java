@@ -1,6 +1,7 @@
 package com.bunker.bookingback.application.service.impl;
 
 import com.bunker.bookingback.application.dto.ScheduleDto;
+import com.bunker.bookingback.application.dto.SchedulePagedDto;
 import com.bunker.bookingback.application.mapper.ScheduleMapper;
 import com.bunker.bookingback.application.service.ScheduleService;
 import com.bunker.bookingback.domain.model.Schedule;
@@ -32,7 +33,7 @@ public class ScheduleServiceImpl implements ScheduleService {
     }
 
     @Override
-    public List<ScheduleDto> findAll() {
-        return this.scheduleMapper.modelToDto(this.scheduleRepository.findAll());
+    public SchedulePagedDto findAll() {
+        return new SchedulePagedDto(this.scheduleMapper.modelToDto(this.scheduleRepository.findAll()));
     }
 }
