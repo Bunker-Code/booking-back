@@ -21,7 +21,7 @@ public class ScheduleApiService {
     private final ScheduleService scheduleService;
 
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Success", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ScheduleDto.class))),
+            @ApiResponse(responseCode = "200", description = "Success", content = @Content(mediaType = "application/json")),
             @ApiResponse(responseCode = "400", description = "Bad Request"),
             @ApiResponse(responseCode = "404", description = "Not found"),
     })
