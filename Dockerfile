@@ -17,7 +17,7 @@ FROM openjdk:17-jdk-slim
 EXPOSE 8080
 
 # Copiar el JAR desde la primera etapa de construcción
-COPY --from=build /usr/src/app/target/demo-1.0.jar /app.jar
+COPY --from=build /usr/src/app/target/booking-back-0.0.1-SNAPSHOT.jar /app.jar
 
 # Establecer el comando para ejecutar la aplicación
 ENTRYPOINT ["java", "-jar", "/app.jar"]
