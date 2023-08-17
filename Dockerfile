@@ -11,7 +11,7 @@ WORKDIR /usr/src/app
 RUN mvn clean package
 
 # Segunda etapa: Crear imagen final con el JRE
-FROM openjdk:17-jre-slim
+FROM openjdk:17-jdk-slim
 
 # Exponer el puerto que la aplicación utiliza
 EXPOSE 8080
