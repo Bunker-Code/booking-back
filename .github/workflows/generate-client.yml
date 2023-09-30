@@ -26,6 +26,9 @@ jobs:
         with:
           node-version: '16' # Change to your desired Node.js version
           registry-url: 'https://maven.pkg.github.com/CarlosribesDev/booking-client'
+      - name: show files
+        run: |
+          ls -la
 
       - name: Publish TypeScript client to GitHub Packages
         run: |
