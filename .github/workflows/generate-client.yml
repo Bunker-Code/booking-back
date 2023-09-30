@@ -14,6 +14,9 @@ jobs:
         run: |
           wget https://oss.sonatype.org/content/repositories/releases/io/swagger/codegen/v3/swagger-codegen-cli/3.0.29/swagger-codegen-cli-3.0.29.jar -O swagger-codegen-cli.jar
 
+      - name: Create output directory
+        run: mkdir -p typescript-client
+
       - name: Generate TypeScript client
         run: |
           java -jar swagger-codegen-cli.jar generate \
@@ -27,7 +30,7 @@ jobs:
           node-version: '16' # Change to your desired Node.js version
           registry-url: 'https://maven.pkg.github.com/CarlosribesDev/booking-client'
       - name: Publish TypeScript client to GitHub Packages
-        run:
+        run: |
           cd typescript-client
           npm publish
         env:
