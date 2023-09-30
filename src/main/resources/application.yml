@@ -1,8 +1,8 @@
 spring:
   datasource:
     username: postgres
-    password: 04MrZiJUfNnlzV8uKWe9
-    url: jdbc:postgresql://containers-us-west-199.railway.app:6611/railway
+    password: OC84dyyBfUFBJB4xd2DN
+    url: jdbc:postgresql://containers-us-west-94.railway.app:7076/railway
   mustache:
     check-template-location: false
 

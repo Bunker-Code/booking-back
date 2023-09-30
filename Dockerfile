@@ -10,7 +10,7 @@ WORKDIR /usr/src/app
 # Ejecutar Maven para compilar y empaquetar la aplicación
 RUN mvn clean package
 
-# Segunda etapa: Crear imagen final con el JRE
+# Segunda etapa: Crear imagen final con el JDK
 FROM openjdk:17-jdk-slim
 
 # Exponer el puerto que la aplicación utiliza

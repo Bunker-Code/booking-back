@@ -17,8 +17,8 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Compile
-        run: mvn -B compile --file pom.xml
+        run: mvn -B compile
       - name: Test
-        run: mvn -B test --file pom.xml
+        run: mvn -B test
       - name: Package
-        run: mvn -B package -DskipTests --file pom.xml
+        run: mvn -B package -DskipTests
