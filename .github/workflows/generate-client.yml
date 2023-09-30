@@ -18,7 +18,7 @@ jobs:
         run: |
           java -jar swagger-codegen-cli.jar generate \
           -i openapi/apidoc.json \
-          -L typescript-axios \
+          -l typescript-axios \
           -o typescript-client
 
       - name: Setup Node.js
