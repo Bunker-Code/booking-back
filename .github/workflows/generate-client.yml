@@ -29,6 +29,20 @@ jobs:
         with:
           node-version: '16' # Change to your desired Node.js version
           registry-url: 'https://maven.pkg.github.com/CarlosribesDev/booking-client'
+      - name: Create package.json in typescript-client
+        run: |
+          echo '{' > typescript-client/package.json
+          echo '  "name": "my-typescript-client",' >> typescript-client/package.json
+          echo '  "version": "1.0.0",' >> typescript-client/package.json
+          echo '  "description": "Client library for my API",' >> typescript-client/package.json
+          echo '  "main": "index.js",' >> typescript-client/package.json
+          echo '  "scripts": {' >> typescript-client/package.json
+          echo '    "test": "echo \\"Error: no test specified\\" && exit 1"' >> typescript-client/package.json
+          echo '  },' >> typescript-client/package.json
+          echo '  "author": "ribi-code",' >> typescript-client/package.json
+          echo '  "license": "MIT"' >> typescript-client/package.json
+          echo '}' >> typescript-client/package.json
+
       - name: Publish TypeScript client to GitHub Packages
         run: |
           cd typescript-client
