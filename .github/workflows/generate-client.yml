@@ -18,7 +18,7 @@ jobs:
         run: |
           java -jar swagger-codegen-cli.jar generate \
           -i openapi/apidoc.json \
-          -l typescript-axios \
+          -l typescript-fetch \
           -o typescript-client
 
       - name: Setup Node.js
@@ -26,12 +26,9 @@ jobs:
         with:
           node-version: '16' # Change to your desired Node.js version
           registry-url: 'https://maven.pkg.github.com/CarlosribesDev/booking-client'
-      - name: Install dependencies
-        run: |
-          cd typescript-client
-          npm i axios
       - name: Publish TypeScript client to GitHub Packages
         run:
+          cd typescript-client
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
