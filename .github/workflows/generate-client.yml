@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install Swagger Codegen CLI
         run: |
@@ -27,8 +27,9 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16' # Change to your desired Node.js version
-          registry-url: 'https://npm.pkg.github.com/CarlosribesDev/booking-client'
+          node-version: '20' # Change to your desired Node.js version
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@Bunker-Code'
       - name: Copy package.json to typescript-client
         run: cp package.json typescript-client/
 
