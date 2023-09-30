@@ -1,10 +1,6 @@
 package com.bunker.bookingback.booking.application;
 
 import com.bunker.bookingback.shared.JpaSpecs;
-import com.bunker.bookingback.booking.application.BookingDto;
-import com.bunker.bookingback.booking.application.BookingSearchDto;
-import com.bunker.bookingback.booking.application.BookingMapper;
-import com.bunker.bookingback.booking.application.BookingService;
 import com.bunker.bookingback.booking.domain.Booking;
 import com.bunker.bookingback.booking.domain.BookingRepository;
 

@@ -1,7 +1,5 @@
 package com.bunker.bookingback.booking.application;
 
-import com.bunker.bookingback.booking.application.BookingDto;
-import com.bunker.bookingback.booking.application.BookingSearchDto;
 
 import java.util.List;
 
