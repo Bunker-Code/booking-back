@@ -36,6 +36,7 @@ jobs:
       - name: Publish TypeScript client to GitHub Packages
         run: |
           cd typescript-client
+          npm ci
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
