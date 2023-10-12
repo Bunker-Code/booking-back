@@ -1,10 +1,12 @@
 package com.bunker.bookingback.scheedule.domain;
 
-import com.bunker.bookingback.scheedule.domain.Schedule;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
-import org.springframework.stereotype.Repository;
+import java.util.List;
 
-@Repository
-public interface ScheduleRepository extends JpaRepository<Schedule, Long>, JpaSpecificationExecutor<Schedule> {
+public interface ScheduleRepository  {
+
+    void save(Schedule schedule);
+
+    void deleteById(Long id);
+
+    List<Schedule> findAll();
 }

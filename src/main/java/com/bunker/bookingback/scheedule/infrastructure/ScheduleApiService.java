@@ -2,7 +2,9 @@ package com.bunker.bookingback.scheedule.infrastructure;
 
 import com.bunker.bookingback.scheedule.application.ScheduleDto;
 import com.bunker.bookingback.scheedule.application.SchedulePagedDto;
-import com.bunker.bookingback.scheedule.application.ScheduleService;
+import com.bunker.bookingback.scheedule.application.create.ScheduleCreator;
+import com.bunker.bookingback.scheedule.application.delete.ScheduleDeleter;
+import com.bunker.bookingback.scheedule.application.reader.ScheduleReader;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -18,7 +20,9 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class ScheduleApiService {
 
-    private final ScheduleService scheduleService;
+    private final ScheduleCreator scheduleCreator;
+    private final ScheduleReader scheduleReader;
+    private final ScheduleDeleter scheduleDeleter;
 
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Success", content = @Content(mediaType = "application/json", schema = @Schema(implementation = SchedulePagedDto.class))),
@@ -27,7 +31,7 @@ public class ScheduleApiService {
     })
     @GetMapping
     ResponseEntity<SchedulePagedDto> findAll() {
-        return ResponseEntity.ok(this.scheduleService.findAll());
+        return ResponseEntity.ok(this.scheduleReader.findAll());
     }
 
     @ApiResponses(value = {
@@ -36,8 +40,9 @@ public class ScheduleApiService {
             @ApiResponse(responseCode = "404", description = "Not found"),
     })
     @PostMapping
-    ResponseEntity<ScheduleDto> create(@RequestBody ScheduleDto scheduleDto) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(this.scheduleService.save(scheduleDto));
+    ResponseEntity<Void> create(@RequestBody ScheduleDto scheduleDto) {
+        this.scheduleCreator.create(scheduleDto);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @ApiResponses(value = {
@@ -47,7 +52,7 @@ public class ScheduleApiService {
     })
     @DeleteMapping("/{id}")
     ResponseEntity<Void> delete(@PathVariable Long id) {
-        this.scheduleService.delete(id);
+        this.scheduleDeleter.delete(id);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 }

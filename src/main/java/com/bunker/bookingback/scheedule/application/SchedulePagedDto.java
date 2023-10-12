@@ -1,6 +1,5 @@
 package com.bunker.bookingback.scheedule.application;
 
-import com.bunker.bookingback.scheedule.application.ScheduleDto;
 import com.bunker.bookingback.shared.JsonDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
