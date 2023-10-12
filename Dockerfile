@@ -7,6 +7,10 @@ COPY . /usr/src/app
 # Establecer el directorio de trabajo para futuras operaciones
 WORKDIR /usr/src/app
 
+#Mostrar archivos
+RUN ls -la
+RUN ls -la /etc/secrets/
+
 # Ejecutar Maven para compilar y empaquetar la aplicación
 RUN mvn clean package --settings /etc/secrets/settings.xml
 
