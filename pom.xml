@@ -10,22 +10,12 @@
 	</parent>
 	<groupId>com.bunker</groupId>
 	<artifactId>booking-back</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>booking-back</name>
 	<description>booking-back</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
-	<repositories>
-	<repository>
-		<id>github</id>
-		<name>Bunker-Code packages</name>
-		<url>https://maven.pkg.github.com/CarlosribesDev/ribi-code-spring-utils</url>
-		<snapshots>
-			<enabled>true</enabled>
-		</snapshots>
-	</repository>
-	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -68,7 +58,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>io.ribicode</groupId>
+			<artifactId>spring-utils</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>

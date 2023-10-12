@@ -8,7 +8,7 @@ COPY . /usr/src/app
 WORKDIR /usr/src/app
 
 # Ejecutar Maven para compilar y empaquetar la aplicación
-RUN mvn clean package
+RUN mvn clean package --settings /etc/secrets/settings.xml
 
 # Segunda etapa: Crear imagen final con el JDK
 FROM openjdk:17-jdk-slim
@@ -17,7 +17,7 @@ FROM openjdk:17-jdk-slim
 EXPOSE 8080
 
 # Copiar el JAR desde la primera etapa de construcción
-COPY --from=build /usr/src/app/target/booking-back-0.0.1-SNAPSHOT.jar /app.jar
+COPY --from=build /usr/src/app/target/booking-back-0.0.2.jar /app.jar
 
 # Establecer el comando para ejecutar la aplicación
 ENTRYPOINT ["java", "-jar", "/app.jar"]
